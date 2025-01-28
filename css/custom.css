@@ -67,9 +67,5 @@ section.header .header-content .container{
 }
 
 .btn-download {
-    background-color: #EC5B1B;; /* Example blue */
-    color: white;
-    padding: 8px 16px; /* Example padding */
-    border-radius: 30px; /* Rounded corners */
-    border: 2px solid white; /* ขอบ 2px สีขาว */
+
 }
