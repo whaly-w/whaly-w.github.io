@@ -66,19 +66,12 @@ section.header .header-content .container{
     width: 500px;
 }
 
-.btn-download {
-    background-color: #EC5B1B; /* Orange background */
-    color: white; /* White text */
-    padding: 12px 24px; /* Adjust padding for better size */
-    border-radius: 40px; /* More rounded corners */
-    border: 4px solid white; /* Thick white border */
-    font-size: 18px; /* Larger font */
-    font-weight: bold; /* Make text bold */
-    text-transform: uppercase; /* Uppercase text */
-    cursor: pointer; /* Pointer cursor */
-    display: inline-block; /* Prevents full width */
-    text-align: center; /* Centers text */
-    outline: none; /* Removes focus outline */
-}
+.btn-order 
+    {
+        border-radius: 30px;
+        border: 3px solid #F5F5F5;
+        background: #E75201;
+    }
+
 
 
