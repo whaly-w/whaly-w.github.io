@@ -9,6 +9,13 @@
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add glow effect */
 }
 
+.navbar-brand {
+  font-size: 30px;
+  color: #ffffff;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
 .hero-content {
   width: 100%;
   max-width: 1200px;
@@ -29,7 +36,8 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 50px; /* Increase spacing */
-  margin-bottom: 50px;
+  margin-top: -400px;
+  margin-left: 1000px;
 }
 
 nav li {
