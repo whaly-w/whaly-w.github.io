@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+body {
+  font-family: 'Silkscreen', sans-serif;
+  color: black;
+}
+
+.hero {
+  background-image: url('../assets/background/javier-miranda-AlJ9TQqeCV0-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.title {
+  color: #ffffff;
+  font-family: Silkscreen;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.nav_link:hover {
+  color: #00ccff;
+}
+
+.active {
+  color: red;
+}
+
+.text-wrapper {
+  flex-grow: 1;
+}
+
+.text-wrapper h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Silkscreen', sans-serif;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  margin-right: 500px;
+}
+
+.text-wrapper p {
+  font-size: 20px;
+  font-family: 'Silkscreen', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  margin-right: 900px;
+}
+
+
+/* Welcome Back Section */
+.welcome-back {
+  background-color: #000;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.welcome-back .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.welcome-back h1 {
+  color: #ffffff;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: 'Silkscreen', sans-serif;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+}
+
+/* Mission */
+.mission {
+  background-image: url('../assets/background/chris-h-8KBREkdPJGk-unsplash.jpg');
+  /* Replace with your stars background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 100px 0;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+
+.mission p {
+  font-size: 2vw;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: 'Silkscreen', sans-serif;
+  max-width: 900px;
+  /* Or adjust as needed */
+  height: 400px;
+}
+
+.mission h2 {
+  font-size: 60px;
+  font-family: 'Silkscreen', sans-serif;
+  height: 400px;
+  font-weight: bold;
+}
+
+.planet {
+  /* Common styles for both planets */
+  position: absolute;
+  /* Add width and height, or max-width and max-height if needed */
+}
+
+.jupiter {
+  background-image: url('../assets/images/Jupiter-removebg-preview_0.png');
+  /* Path to Jupiter image */
+  background-size: contain;
+  /* Or cover, depending on how you want it to fit */
+  background-repeat: no-repeat;
+  left: 5%;
+  /* Adjust position as needed */
+  bottom: 20px;
+  /* Adjust position as needed */
+  width: 50%;
+  /* Example width */
+  height: 50%;
+  /* Example height */
+}
+
+.moon {
+  background-image: url('../assets/images/S__11460624-removebg-preview_0.png');
+  /* Path to Moon image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: -25%;
+  /* Adjust position as needed */
+  top: 20px;
+  /* Adjust position as needed */
+  width: 60%;
+  /* Example width */
+  height: 60%;
+  /* Example height */
+}
+
+/* swiper */
+.swiper-background {
+  background: url("../assets/background/spacecraft_V3.png") center/cover no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  background-color: black;
+}
+
+/* .swiper-content {
+  background: url("../assets/background/spacecraft.png") center/cover no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+} */
+
+.swiper-content .title {
+  color: #FFF;
+  text-align: center;
+  font-family: Silkscreen, sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.swiper {
+  width: 80%; 
+  margin: 0 auto;
+  overflow: hidden; 
+  /* background-color: blue; */
+}
+
+.swiper-slide {
+  /* Remove any width you previously set on .swiper-slide */
+  /* Swiper will now manage the slide widths */
+  display: flex; /* Keep this for the vertical arrangement of image and text */
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2%;
+  /* opacity: 0; */
+}
+
+.swiper-slide img {
+  width: 80%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 30px;
+  border: 10px solid #3BF9FA;
+  box-shadow: 0 0 12px 5px rgba(59, 249, 250, 0.8);
+}
+
+
+/* Initially hide all info */
+/* .info {
+  display: none; 
+} */
+
+/* .info {
+  transition: opacity 0.3s ease; 
+  opacity: 0; 
+} */
+
+/* .swiper-slide-active .info {
+  opacity: 1; 
+  display: block;
+} */
+
+.info {
+  /* display: none; */
+  margin-top: 10px;
+  color: #FFF;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-family: Silkscreen, sans-serif;
+}
+
+
+
+.info .nick-name {
+  font-size: 60px;
+}
+
+.info .name {
+  font-size: 30px;
+  display: flex;
+}
+
+.info .ID {
+  font-size: 30px;
+}
+
+

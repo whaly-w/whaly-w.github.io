@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+.hero {
+  background-image: url('../assets/images/javier-miranda-AlJ9TQqeCV0-unsplash.jpg'); /* Correct path to your image */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add glow effect */
+}
+
+.navbar-brand {
+  font-size: 30px;
+  color: #ffffff;
+  font-family: 'Silkscreen', sans-serif;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Increase spacing */
+  margin-top: -400px;
+  margin-left: 1000px;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: 'Silkscreen', sans-serif;
+  letter-spacing: 2px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #00ccff; /* Neon blue hover effect */
+}
+
+.text-wrapper h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Silkscreen', sans-serif;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  margin-right: 500px;
+}
+
+.text-wrapper p {
+  font-size: 20px;
+  font-family: 'Silkscreen', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  margin-right: 900px;
+}
+
+
+/* Welcome Back Section */
+.welcome-back {
+  background-color: #000;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.welcome-back .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.welcome-back h1 {
+  color: #ffffff;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: 'Silkscreen', sans-serif;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+}
+
+.mission {
+  background-image: url('../assets/images/chris-h-8KBREkdPJGk-unsplash.jpg'); /* Replace with your stars background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 100px 0;
+  color: #fff;
+  text-align: center;
+  position: relative; /* Needed for absolute positioning of planets */
+  overflow: hidden; /* To prevent planet images from overflowing */
+}
+
+.mission-content {
+  /* ... (width, max-width - no changes) */
+  text-align: center; /* Center the text horizontally */
+  position: relative; /* For z-index */
+  z-index: 1; /* Ensure text is above planets */
+  display: flex; /* Enable flexbox for vertical alignment */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center horizontally */
+  height: 100%; /* Make sure it takes full height for vertical centering */
+  justify-content: center; /* Vertically center content */
+}
+
+.mission p {
+  font-size: 40px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: 'Silkscreen', sans-serif;
+  max-width: 800px; /* Or adjust as needed */
+  height: 400px;
+}
+
+.mission h2 {
+  font-size: 60px;
+  font-family: 'Silkscreen', sans-serif;
+  height: 400px;
+  font-weight: bold;
+}
+
+.planet { /* Common styles for both planets */
+  position: absolute;
+  /* Add width and height, or max-width and max-height if needed */
+}
+
+.jupiter {
+  background-image: url('../assets/images/Jupiter-removebg-preview_0.png'); /* Path to Jupiter image */
+  background-size: contain; /* Or cover, depending on how you want it to fit */
+  background-repeat: no-repeat;
+  left: 5%; /* Adjust position as needed */
+  bottom: 20px; /* Adjust position as needed */
+  width: 50%; /* Example width */
+  height: 50%; /* Example height */
+}
+
+.moon {
+  background-image: url('../assets/images/S__11460624-removebg-preview_0.png'); /* Path to Moon image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: -25%; /* Adjust position as needed */
+  top: 20px; /* Adjust position as needed */
+  width: 60%; /* Example width */
+  height: 60%; /* Example height */
+}
