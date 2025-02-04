@@ -21,8 +21,8 @@ body {
   font-family: Silkscreen;
   font-size: 30px;
   font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  /* font-weight: 400; */
+  /* line-height: normal; */
 }
 
 .nav_link:hover {
@@ -68,9 +68,12 @@ body {
   margin: 0 auto;
 }
 
+
+
 .welcome-back h1 {
   color: #ffffff;
-  font-size: 100px;
+  /* font-size: 100px; */
+  font-size: 80px;
   font-weight: bold;
   font-family: 'Silkscreen', sans-serif;
   text-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
@@ -246,16 +249,17 @@ body {
 
 
 .info .nick-name {
-  font-size: 60px;
+  /* font-size: 60px; */
+  font-size: 3vw;
 }
 
 .info .name {
-  font-size: 30px;
+  font-size: 1.5vw;
   display: flex;
 }
 
 .info .ID {
-  font-size: 30px;
+  font-size: 1.5vw;
 }
 
 

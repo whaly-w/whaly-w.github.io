@@ -40,7 +40,7 @@ setInterval(function () {
         const imageRect = slide.getBoundingClientRect();
         const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
         const imageCenterX = imageRect.left + imageRect.width / 2;
-        const tolerance = 50; // 50 pixels
+        const tolerance = 10; // 50 pixels
         const isCenterXWithinTolerance = Math.abs(imageCenterX - viewportWidth / 2) <= tolerance;
         // console.log(isCenterXWithinTolerance)
 
