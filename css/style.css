@@ -9,17 +9,20 @@ body {
   background-image: url('../assets/background/javier-miranda-AlJ9TQqeCV0-unsplash.jpg');
   background-size: cover;
   background-position: center;
+  aspect-ratio: 16/9;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  /* background-color: red; */
 }
 
 .title {
   color: #ffffff;
   font-family: Silkscreen;
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: 3vw;
   font-style: normal;
   /* font-weight: 400; */
   /* line-height: normal; */
@@ -38,7 +41,8 @@ body {
 }
 
 .text-wrapper h1 {
-  font-size: 50px;
+  /* font-size: 50px; */
+  font-size: 4vw;
   font-weight: bold;
   text-transform: uppercase;
   font-family: 'Silkscreen', sans-serif;
@@ -48,7 +52,8 @@ body {
 }
 
 .text-wrapper p {
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 2vw;
   font-family: 'Silkscreen', sans-serif;
   letter-spacing: 2px;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
@@ -73,7 +78,8 @@ body {
 .welcome-back h1 {
   color: #ffffff;
   /* font-size: 100px; */
-  font-size: 80px;
+  /* font-size: 80px; */
+  font-size: 6vw;
   font-weight: bold;
   font-family: 'Silkscreen', sans-serif;
   text-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
@@ -86,7 +92,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 100px 0;
+  padding: 10vw 0;
+  /* padding: 100px 0; */
   color: #fff;
   text-align: center;
   position: relative;
@@ -116,7 +123,8 @@ body {
 }
 
 .mission h2 {
-  font-size: 60px;
+  /* font-size: 60px; */
+  font-size: 4vw;
   font-family: 'Silkscreen', sans-serif;
   height: 400px;
   font-weight: bold;
@@ -163,7 +171,9 @@ body {
 .swiper-background {
   background: url("../assets/background/spacecraft_V3.png") center/cover no-repeat;
   width: 100%;
-  height: 100vh;
+  aspect-ratio: 16/9;
+  /* height: 100vh; */
+  /* min-height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,14 +198,16 @@ body {
   color: #FFF;
   text-align: center;
   font-family: Silkscreen, sans-serif;
-  font-size: 60px;
-  font-weight: 400;
+  /* font-size: 60px; */
+  font-size: 4vw;
+  /* font-weight: 400; */
   margin-bottom: 20px;
+  /* margin-bottom: 5%; */
   z-index: 1;
 }
 
 .swiper {
-  width: 80%; 
+  width: 75%; 
   margin: 0 auto;
   overflow: hidden; 
   /* background-color: blue; */
@@ -207,7 +219,7 @@ body {
   display: flex; /* Keep this for the vertical arrangement of image and text */
   flex-direction: column;
   align-items: center;
-  padding-top: 2%;
+  padding: 2% 0%;
   /* opacity: 0; */
 }
 
@@ -221,45 +233,70 @@ body {
 }
 
 
-/* Initially hide all info */
-/* .info {
-  display: none; 
-} */
-
-/* .info {
-  transition: opacity 0.3s ease; 
-  opacity: 0; 
-} */
-
-/* .swiper-slide-active .info {
-  opacity: 1; 
-  display: block;
-} */
-
 .info {
-  /* display: none; */
-  margin-top: 10px;
-  color: #FFF;
-  text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  font-family: Silkscreen, sans-serif;
+  display: none;
 }
 
 
-
-.info .nick-name {
+.swiper-info .nick-name {
   /* font-size: 60px; */
-  font-size: 3vw;
+  font-size: 3.2vw;
+  margin: 0%;
 }
 
-.info .name {
-  font-size: 1.5vw;
-  display: flex;
+.swiper-info .name {
+  /* font-size: 30px;  */
+  font-size: 1.6vw;
+  margin: 0%;
 }
 
-.info .ID {
-  font-size: 1.5vw;
+.swiper-info .ID {
+  font-size: 1.6vw;
+  /* font-size: 1.6vw; */
 }
 
 
+/* === MEDIA QUERIES FOR SMALL SCREENS (MOBILE) === */
+@media (max-width: 768px) {
+  .swiper-content .title {
+    margin-bottom: 0px
+  }
+
+  .text-wrapper h1 {
+    font-size: 6vw;
+    margin-right: 5%;
+  }
+
+  .text-wrapper p {
+    font-size: 3vw;
+    margin-right: 10%;
+  }
+
+  .welcome-back h1 {
+    font-size: 8vw;
+  }
+
+  .mission p {
+    font-size: 3vw;
+  }
+
+  .mission h2 {
+    font-size: 5vw;
+  }
+
+  .swiper-content .title {
+    font-size: 6vw;
+  }
+
+  .swiper-info .nick-name {
+    font-size: 3vw;
+  }
+
+  .swiper-info .name {
+    font-size: 2vw;
+  }
+
+  .swiper-info .ID {
+    font-size: 2vw;
+  }
+}
