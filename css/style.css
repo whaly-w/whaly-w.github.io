@@ -237,6 +237,10 @@ body {
   display: none;
 }
 
+.swiper-info {
+  color: #FFF;
+}
+
 
 .swiper-info .nick-name {
   /* font-size: 60px; */
