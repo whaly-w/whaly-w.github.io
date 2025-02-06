@@ -11,7 +11,7 @@ const swiper = new Swiper('.mySwiper', {
     // spaceBetween: 20,
     coverflowEffect: {
         rotate: 15,
-        stretch: 200,
+        stretch: 80,
         depth: 350,
         modifier: 1,
         slideShadows: false,
