@@ -13,7 +13,7 @@ const database = getDatabase(app);
 
 // Function to fetch restaurant/shop data from Firebase
 async function fetchRestaurants() {
-    const shopRef = ref(database, 'FATE_MEAL/GlobalShop');
+    const shopRef = ref(database, 'FATE_MEAL/GlobalGroup');
     const snapshot = await get(shopRef);
 
     if (snapshot.exists()) {
@@ -26,21 +26,18 @@ async function fetchRestaurants() {
             console.log(data); // Debugging: log data to check if 'Photo' and 'Location' exist
             let restaurantCard = document.createElement("div");
             restaurantCard.classList.add("restaurant-card");
-            restaurantCard.id = 'restaurant-card-' + folderName;
 
             // Ensure data exists before assigning
             const name = folderName || "Unknown"; // Use the folder name as the restaurant name
             const photo = data.Photo || 'placeholder.jpg';
             const location = data.Location || "Unknown Location";
 
-            const btn_id = 'btn-' + folderName;
             restaurantCard.innerHTML = `
                 <div class="restaurant-image" style="background-image: url('${photo}');"></div>
                 <div class="restaurant-info">
                     <h3>${name}</h3>
-                    <p>${location}</p>
                 </div>
-                <button class="add-button" id=${btn_id}>+</button>
+                <button class="add-button">+</button>
             `;
             restaurantList.appendChild(restaurantCard);
         });
@@ -54,61 +51,60 @@ fetchRestaurants();
 
 document.querySelector(".search-bar input").addEventListener("input", async function() {
     let searchQuery = this.value.toLowerCase();
-    let restaurantDiv = document.querySelector(".restaurant-list");
+    const shopRef = ref(database, 'FATE_MEAL/GlobalGroup');
+    const snapshot = await get(shopRef);
+    let restaurantList = document.querySelector(".restaurant-list");
+    restaurantList.innerHTML = "";
 
-    if (restaurantDiv) {
-        let restaurantList = restaurantDiv.querySelectorAll('div');
-        
-        // console.log(restaurantList)
-        restaurantList.forEach((restaurant) => {
-            const id = restaurant.id
-            if (!id) { return; }
-            
-            let target_rest = restaurantDiv.querySelector('#' + id);
-            console.log(target_rest)
+    snapshot.forEach((childSnapshot) => {
+        let folderName = childSnapshot.key; // Get the folder name (restaurant name)
+        let data = childSnapshot.val();
+        console.log(data); // Debugging: log data here as well to check during search
+        if (folderName.toLowerCase().includes(searchQuery)) {
+            let restaurantCard = document.createElement("div");
+            restaurantCard.classList.add("restaurant-card");
 
-            if (id.toLocaleLowerCase().includes(searchQuery)) {
-                target_rest.classList.remove('restaurant-card-hidden')
-            } else {
-                target_rest.classList.add('restaurant-card-hidden')
-            }
-        })
-    }
+            const name = folderName || "Unknown"; // Use the folder name as the restaurant name
+            const photo = data.Photo || 'placeholder.jpg';
+            const location = data.Location || "Unknown Location";
+
+            restaurantCard.innerHTML = `
+                <div class="restaurant-image" style="background-image: url('${photo}');"></div>
+                <div class="restaurant-info">
+                    <h3>${name}</h3>
+                </div>
+                <button class="add-button">+</button>
+            `;
+            restaurantList.appendChild(restaurantCard);
+        }
+    });
 });
 
 // Function to handle the "+" button click event
 async function addRestaurantToMealPack(folderName) {
-    console.log(folderName)
-
-    let restaurantCard = document.querySelector("#restaurant-card-" + folderName);
-    console.log(restaurantCard)
-
-    restaurantCard.classList.add('restaurant-card-selected');
-    restaurantCard.classList.remove('restaurant-card');
-    // const mealPackRef = ref(database, 'FATE_MEAL/Account/whaly-w/Meal-pack');
-    // const globalGroupRef = ref(database, `FATE_MEAL/GlobalGroup/${folderName}`);
+    const mealPackRef = ref(database, 'FATE_MEAL/Account/whaly-w/Meal-pack');
+    const globalGroupRef = ref(database, `FATE_MEAL/GlobalGroup/${folderName}`);
     
-    // // Get the data from the restaurant folder in GlobalGroup
-    // const globalGroupSnapshot = await get(globalGroupRef);
+    // Get the data from the restaurant folder in GlobalGroup
+    const globalGroupSnapshot = await get(globalGroupRef);
 
-    // if (globalGroupSnapshot.exists()) {
-    //     const restaurantData = globalGroupSnapshot.val();  // Get the data from the folder
+    if (globalGroupSnapshot.exists()) {
+        const restaurantData = globalGroupSnapshot.val();  // Get the data from the folder
 
-    //     // Check if the folder already exists in Meal-pack
-    //     const mealPackSnapshot = await get(mealPackRef);
-    //     const mealPackData = mealPackSnapshot.exists() ? mealPackSnapshot.val() : {};
+        // Check if the folder already exists in Meal-pack
+        const mealPackSnapshot = await get(mealPackRef);
+        const mealPackData = mealPackSnapshot.exists() ? mealPackSnapshot.val() : {};
 
-    //     if (!mealPackData[folderName]) {
-    //         // Add the restaurant data to Meal-pack
-    //         await set(ref(database, `FATE_MEAL/Account/whaly-w/Meal-pack/${folderName}`), restaurantData);
-    //         console.log(`Added ${folderName} to Meal-pack`);
-    //     } else {
-    //         console.log(`${folderName} already exists in Meal-pack`);
-    //     }
-    // } else {
-    //     console.log(`${folderName} does not exist in GlobalGroup`);
-    // }
-
+        if (!mealPackData[folderName]) {
+            // Add the restaurant data to Meal-pack
+            await set(ref(database, `FATE_MEAL/Account/whaly-w/Meal-pack/${folderName}`), restaurantData);
+            console.log(`Added ${folderName} to Meal-pack`);
+        } else {
+            console.log(`${folderName} already exists in Meal-pack`);
+        }
+    } else {
+        console.log(`${folderName} does not exist in GlobalGroup`);
+    }
 }
 
 // Add event listener for "+" buttons
@@ -120,7 +116,7 @@ document.querySelector(".restaurant-list").addEventListener("click", function(ev
         const folderName = restaurantCard ? restaurantCard.querySelector(".restaurant-info h3").textContent : null;
         
 
-        // console.log(`${folderName}`)
+        console.log(`${folderName}`)
         // Ensure folderName is valid before calling the function
         if (folderName) {
             addRestaurantToMealPack(folderName);

@@ -51,7 +51,7 @@ h2 {
     gap: 10px;
 }
 
-/* Restaurant Card */
+/* Restaurant Card - not selected*/
 .restaurant-card {
     display: flex;
     align-items: center;
@@ -60,6 +60,23 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Restaurant Card - selected*/
+.restaurant-card-selected {
+    display: flex;
+    align-items: center;
+    background-color: #fce4cb;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: #f4a261;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Restaurant Card - hidden*/
+.restaurant-card-hidden {
+    display: none;
+}
+
 
 /* Image Placeholder */
 .restaurant-image {
