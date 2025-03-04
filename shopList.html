@@ -8,20 +8,44 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <script type="module" src="firebase.js"></script>
+    <script type="module" src="firebase_mygroup.js"></script>
     <div class="container">
+
+        <h2>Name</h2>
+        <div class="search-bar" id="name-msg">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Group Name">
+        </div>
+
         <!-- Search Bar -->
-        <div class="search-bar">
+        <h2>Restaurants</h2>
+        <div class="search-bar" id="search-msg">
             <i class="fas fa-search"></i>
             <input type="text" placeholder="Search groups">
         </div>
 
         <!-- Recommendation Section -->
-        <h2>Recommendation</h2>
-        <div class="restaurant-list">
+        <div class="selected-list">
+            <div class="selected-card" style="display: none;">
+                <button class="delete-btn">Chicken Lover Group ✖</button>
+            </div>
+        </div>
+
+        <!-- add new restaurant -->
+        <div class="restaurant-list" id="restaurant-add">
+            <div class="restaurant-card restaurant-card-hidden" id="new-restuarant">
+                <button class="add-button create-button" id="new-restuarant-btn">+</button>
+                <div class="restaurant-info" id="new-restuarant-info">
+                    <h3>Chicken Lover Group</h3>
+                </div>
+            </div>
+        </div>
+        
+        <!-- add preset restaurant -->
+        <div class="restaurant-list" id="restaurant-list">
             <div class="restaurant-card">
                 <div class="restaurant-image"></div>
-                <div class="restaurant-info">
+                <div class="restaurant-info ">
                     <h3>Chicken Lover Group</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Location 1</p>
                 </div>

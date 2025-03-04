@@ -1,14 +1,16 @@
+@import url('https://fonts.cdnfonts.com/css/sen');
+
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Sen', Arial, sans-serif;
+    background-color: #fff;
     margin: 0;
     padding: 20px;
 }
 
 /* Container */
 .container {
-    max-width: 400px;
+    max-width: 500px;
     margin: auto;
     background-color: #fff;
     padding: 20px;
@@ -32,10 +34,25 @@ body {
 }
 
 .search-bar input {
+    font-family: 'Sen', sans-serif;
     border: none;
     background: none;
     outline: none;
     flex-grow: 1;
+}
+
+/* Selected Section */
+.selected-list {
+    margin-bottom: 2%;
+}
+
+.selected-card {
+    border-color: #888888;
+}
+
+.delete-btn {
+    margin-inline: 2px;
+    color: #888888;
 }
 
 /* Recommendation Section */
@@ -117,4 +134,13 @@ h2 {
 
 .add-button:hover {
     background-color: #e76f51;
+}
+
+.restaurant-add-btn:hover {
+    background-color: #fce4cb;
+}
+
+/* Create Button */
+.create-button {
+    margin-right: 10px;
 }
