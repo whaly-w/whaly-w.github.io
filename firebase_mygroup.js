@@ -76,10 +76,10 @@ async function handleAddRestaurant(folderName) {
     let selectedList = document.querySelector(".selected-list");
 
     let deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('delete-btn')
+    deleteBtn.classList.add('btn', 'btn-outline-secondary', 'delete-btn');
     deleteBtn.id = 'delete-btn-' + folderName
     deleteBtn.addEventListener('click', () => {handleDeleteBtn(folderName)});
-    deleteBtn.innerHTML = `${folderName} ✖`;
+    deleteBtn.innerHTML = `${folderName} ⛌`;
     
     selectedList.appendChild(deleteBtn);
     
@@ -116,13 +116,14 @@ async function fetchRestaurants() {
             const name = folderName || "Unknown"; // Use the folder name as the restaurant name
             const photo = data.Photo || 'placeholder.jpg';
             const location = data.Location || "Unknown Location";
+            const rating = data.Rate || "Unknown Location";
 
             const btn_id = 'btn-' + folderName;
             restaurantCard.innerHTML = `
                 <div class="restaurant-image" style="background-image: url('${photo}');"></div>
                 <div class="restaurant-info">
                     <h3>${name}</h3>
-                    <p>${location}</p>
+                    <p>☆ ${rating} ⚲ ${location}</p>
                 </div>
             `;
             restaurantList.appendChild(restaurantCard);
@@ -132,6 +133,20 @@ async function fetchRestaurants() {
     }
 }
 
+async function createRestaurant() {
+    let name = document.querySelector("#restaurant-create-name input").value;
+    let location = document.querySelector("#restaurant-create-location input").value;
+    let rating = document.querySelector("#restaurant-create-rating input").value;
+
+    let data = {};
+    data['Name'] = name,
+    data['Location'] = location,
+    data['Rate'] = rating
+
+
+    await set(ref(database, `FATE_MEAL/Account/${urlParams['Username']}/LocalShop/${name}`), data);
+    handleAddRestaurant(name);
+}
 
 
 ///////////////////////////////////////////// Call function to load restaurant data
@@ -143,8 +158,10 @@ fetchRestaurants();
 ///////////////////////////////////////////// Add Events
 // Add event to search-bar
 document.querySelector("#search-msg input").addEventListener("input", async function() {
-    let searchQuery = this.value.toLowerCase();
+    let searchQueryRaw = this.value;
+    let searchQuery = searchQueryRaw.toLowerCase();
     let restaurantDiv = document.querySelector("#restaurant-list");
+    let modalName = document.querySelector("#restaurant-create-name input");
 
     if (restaurantDiv) {
         console.log(searchQuery.length)
@@ -157,7 +174,9 @@ document.querySelector("#search-msg input").addEventListener("input", async func
         
         let newRestaurantInfo = newRestaurant.querySelector('#new-restuarant-info')
         console.log(newRestaurantInfo)
-        newRestaurantInfo.innerHTML = `<h3>${searchQuery}</h3>`
+        newRestaurantInfo.innerHTML = `<h3>${searchQueryRaw}</h3>`
+
+        modalName.value = searchQueryRaw;
         
 
         let restaurantList = restaurantDiv.querySelectorAll('div');
@@ -185,3 +204,5 @@ document.querySelector('#name-msg input').addEventListener("input", async functi
     console.log(inputName)
     await set(ref(database, `FATE_MEAL/Account/${urlParams['Username']}/MyGroupVariable/Name`), inputName);
 });
+
+document.querySelector('#restaurant-create-btn').addEventListener('click', () => {createRestaurant()});

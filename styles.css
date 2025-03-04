@@ -51,14 +51,21 @@ body {
 }
 
 .delete-btn {
+    font-family: 'Sen', sans-serif;
     margin-inline: 2px;
     color: #888888;
 }
 
 /* Recommendation Section */
 h2 {
+    font-family: 'Sen', sans-serif;
     font-size: 18px;
     margin-bottom: 15px;
+}
+
+p {
+    font-family: 'Sen', sans-serif;
+    font: 18px;
 }
 
 /* Restaurant List */
@@ -144,3 +151,40 @@ h2 {
 .create-button {
     margin-right: 10px;
 }
+
+/* Modal */
+.modal-content {
+    font-family: 'Sen', sans-serif;
+}
+
+.btn-close {
+    background-color: #fff3e0;
+    border-radius: 50%; 
+    width: 30px; 
+    height: 30px;
+    padding: 0;
+    line-height: 26px; 
+    color: #f57c00; 
+    font-size: 16px; 
+    opacity: 1; 
+    box-shadow: none; 
+  }
+  
+  .btn-close:hover {
+    background-color: #fff3e0; 
+    color: #f9a825; 
+  }
+
+  .create-btn {
+    background-color: #ff9100; /* Orange background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+  }
+  
+  .create-btn:hover {
+    background-color: #ff6d00; /* Slightly darker orange on hover */
+  }
