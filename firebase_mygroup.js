@@ -26,7 +26,7 @@ function getUrlParameters() {
         params['Username'] = modes[0]
         if (modes.length > 1) {
             params['mode'] = 'Edit'
-            params['target'] = modes[1].split('=')[1].replace('%20', ' ')
+            params['target'] = modes[1].split('=')[1].replaceAll('%20', " "); 
         } else {
             params['mode'] = 'Create'
         }
