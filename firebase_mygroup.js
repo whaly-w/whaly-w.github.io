@@ -21,7 +21,15 @@ function getUrlParameters() {
     if (!search) {
         params['Username'] = 'whaly-w'
     } else {
-        params['Username'] = search.split('&')
+        let modes = search.split('&')
+
+        params['Username'] = modes[0]
+        if (modes.length > 1) {
+            params['mode'] = 'Edit'
+            params['target'] = modes[1].split('=')[1].replace('%20', ' ')
+        } else {
+            params['mode'] = 'Create'
+        }
     }
     return params;
 }
@@ -74,6 +82,17 @@ async function handleAddRestaurant(folderName) {
 
 
     let selectedList = document.querySelector(".selected-list");
+
+    let deleteBtnList = selectedList.querySelectorAll('.delete-btn');
+    let exist = false;
+    console.log(deleteBtnList)
+    deleteBtnList.forEach(btn => {
+        if (btn.id == 'delete-btn-' + folderName) {
+            exist = true;
+        }
+    });
+    if (exist) {return};
+
 
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('btn', 'btn-outline-secondary', 'delete-btn');
@@ -145,20 +164,17 @@ async function createRestaurant() {
 
 
     await set(ref(database, `FATE_MEAL/Account/${urlParams['Username']}/LocalShop/${name}`), data);
+    document.querySelector("#search-msg input").value = '';
+    document.querySelector("#restaurant-create-name input").value = '';
+    document.querySelector("#restaurant-create-location input").value = '';
+    document.querySelector("#restaurant-create-rating input").value = '';
+    
+    searchbarHandle()
     handleAddRestaurant(name);
 }
 
-
-///////////////////////////////////////////// Call function to load restaurant data
-resetVariables();
-fetchRestaurants();
-
-
-
-///////////////////////////////////////////// Add Events
-// Add event to search-bar
-document.querySelector("#search-msg input").addEventListener("input", async function() {
-    let searchQueryRaw = this.value;
+async function searchbarHandle(searchBar) {
+    let searchQueryRaw = document.querySelector("#search-msg input").value;
     let searchQuery = searchQueryRaw.toLowerCase();
     let restaurantDiv = document.querySelector("#restaurant-list");
     let modalName = document.querySelector("#restaurant-create-name input");
@@ -196,7 +212,35 @@ document.querySelector("#search-msg input").addEventListener("input", async func
             }
         })
     }
-});
+}
+
+async function autoAddData() {
+    console.log('Edit mode')
+
+    let snapshot = await get(ref(database, `FATE_MEAL/Account/${urlParams['Username']}/Meal-pack/${urlParams['target']}`))
+    if (snapshot.val()[0] == "0_Default") {
+        snapshot = await get(ref(database, `FATE_MEAL/GlobalGroup/${urlParams['target']}`))
+    }
+    
+    snapshot.val().forEach(shop => {
+        handleAddRestaurant(shop);
+    })
+}
+
+
+///////////////////////////////////////////// Call function to load restaurant data
+resetVariables();
+fetchRestaurants();
+
+if (urlParams['mode'] == 'Edit') {
+    autoAddData();
+}
+
+
+
+///////////////////////////////////////////// Add Events
+// Add event to search-bar
+document.querySelector("#search-msg input").addEventListener("input", () => {searchbarHandle()});
 
 // Add event to Name-msg
 document.querySelector('#name-msg input').addEventListener("input", async function() {
