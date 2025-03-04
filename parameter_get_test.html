@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Display URL Parameters</title>
+</head>
+
+<body>
+    <h1>URL Parameters:</h1>
+    <div id="parameterDisplay"></div>
+
+    <script>
+        function getUrlParameters() {
+            const params = {};
+            const search = window.location.search.substring(1);
+            if (search) {
+                const pairs = search.split('&');
+                for (const pair of pairs) {
+                    const [key, value] = pair.split('=');
+                    if (key) {
+                        params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+                    }
+                }
+            }
+            return search;
+        }
+
+        const urlParams = getUrlParameters();
+        const displayElement = document.getElementById('parameterDisplay');
+
+        displayElement.textContent = urlParams;
+
+        // if (Object.keys(urlParams).length > 0) {
+        //     let outputHTML = '<ul>'; // Start an unordered list
+        //     for (const key in urlParams) {
+        //         outputHTML += `<li><strong>${key}:</strong> ${urlParams[key]}</li>`; // Create list items
+        //     }
+        //     outputHTML += '</ul>'; // Close the unordered list
+        //     displayElement.innerHTML = outputHTML;
+        // } else {
+        //     displayElement.textContent = 'No parameters found in the URL.';
+        // }
+    </script>
+</body>
+
+</html>
