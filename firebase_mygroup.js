@@ -69,7 +69,7 @@ async function handleDeleteBtn(folderName) {
 }
 
 // Function to handle the "+" button click event
-async function handleAddRestaurant(folderName) {
+async function handleAddRestaurant(folderName, disable) {
     console.log(folderName)
 
     let restaurantCard = document.querySelector("#restaurant-card-" + folderName);
@@ -225,6 +225,9 @@ async function autoAddData() {
     snapshot.val().forEach(shop => {
         handleAddRestaurant(shop);
     })
+
+    document.querySelector('#name-msg input').value = urlParams['target'];
+    await set(ref(database, `FATE_MEAL/Account/${urlParams['Username']}/MyGroupVariable/Name`), urlParams['target']);
 }
 
 
