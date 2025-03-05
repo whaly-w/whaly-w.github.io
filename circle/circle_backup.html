@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Spinner</title>
+    <link rel="stylesheet" href="style_1.css">
+    <script type="module" src="script_2.js" defer></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"></script>
+</head>
+<body>
+
+    <h2>Find your meal</h2>
+    
+    <div class="wheel-container">
+        <div class="arrow"></div>
+        <div class="wheel" id="wheel"></div>
+    </div>
+
+    <button class="spinner-btn" onclick="spinWheel()">SPIN</button>
+</body>
+</html>
