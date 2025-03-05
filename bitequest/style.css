@@ -69,10 +69,46 @@ body {
   margin-right: 900px;
 }
 
+.pain-point {
+  background-color: hsl(0, 0%, 100%);
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.pain-point .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.pain-point h1 {
+  color: #FF914C;
+  font-family: 'Righteous', sans-serif;
+  font-size: 6vw;
+  font-style: normal;
+
+  position: relative;
+  top: 150px;   /* Moves image up */
+  left: 200px;   
+}
+
+.pain-point p {
+  color: #FF914C;
+  font-family: 'Righteous', sans-serif;
+  font-size: 2vw;
+  font-style: normal;
+
+  position: relative;
+  top: 200px;   /* Moves image up */
+  left: 0px;   
+}
 
 /* Welcome Back Section */
 .welcome-back {
-  background-color: hsl(0, 0%, 100%);
+  background-color:#FF914C;
   background-size: cover;
   background-position: center;
   aspect-ratio: 16/9;
@@ -87,7 +123,7 @@ body {
 }
 
 .welcome-back h1 {
-  color: #FF914C;
+  color: #ffffff;
   font-family: 'Righteous', sans-serif;
   font-size: 6vw;
   font-style: normal;
@@ -98,7 +134,7 @@ body {
 }
 
 .welcome-back p {
-  color: #FF914C;
+  color: #ffffff;
   font-family: 'Righteous', sans-serif;
   font-size: 2vw;
   font-style: normal;
@@ -110,7 +146,7 @@ body {
 
 /* Mission */
 .mission {
-  background-color:  #FF914C;
+  background-color:  #ffffff;
   /* Replace with your stars background */
   background-size: cover;
   background-repeat: no-repeat;
@@ -136,7 +172,7 @@ body {
 
 
 .mission p {
-  color:  #ffffff;
+  color:  #FF914C;
   font-family: 'Righteous', sans-serif;
   font-size: 2vw;
   font-style: normal;
@@ -149,7 +185,7 @@ body {
 }
 
 .mission h2 {
-  color:  #ffffff;
+  color:  #FF914C;
   font-family: 'Righteous', sans-serif;
   font-size: 4vw;
   font-style: normal;
@@ -210,7 +246,7 @@ body {
   align-items: center;
   position: absolute;
   z-index: -1;
-  background-color: #ffffff;
+  background-color: #FF914C;
 }
 
 /* .swiper-content {
@@ -225,7 +261,7 @@ body {
 } */
 
 .swiper-content .title {
-  color:  #FF914C;
+  color:  #ffffff;
   font-family: 'Righteous', sans-serif;
   font-size: 4vw;
   font-style: normal;
@@ -260,7 +296,7 @@ body {
   aspect-ratio: 3/4;
   object-fit: cover;
   border-radius: 30px;
-  border: 10px solid#FF914C;
+  border: 10px solid#ffffff;
 }
 
 
@@ -269,7 +305,7 @@ body {
 }
 
 .swiper-info {
-  color: #FF914C;
+  color: #ffffff;
 }
 
 

@@ -1,7 +1,10 @@
 Topic: BiteQuest: Let the Wheel Decide, You Just Enjoy!
 
 Pain point:
-Every day, people waste valuable time trying to decide what to eat. Whether with friends, family, or coworkers, the same frustrating cycle repeats—endless debates, rejected suggestions, and finally settling for the same old food. Other apps overwhelm users with too many choices or give completely random results that don’t match cravings. There needs to be a simple yet fun way to make food decisions effortless.
+Every day, people waste valuable time trying to decide what to eat. Whether with friends, family, or coworkers, 
+the same frustrating cycle repeats—endless debates, rejected suggestions, and finally settling for the same old 
+food. Other apps overwhelm users with too many choices or give completely random results that don’t match cravings. 
+There needs to be a simple yet fun way to make food decisions effortless.
 
 Relate Work:
 - Google & Food Apps: Show too many options, leading to decision fatigue.
