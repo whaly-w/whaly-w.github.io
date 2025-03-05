@@ -9,11 +9,12 @@
   
   #wheel {
     display: block;
+    font-size: 30px;
     font-family: 'Sen', sans-serif;
   }
   
   #spin {
-    font: 1.5em/0 sans-serif;
+    font-size: 30px;
     user-select: none;
     cursor: pointer;
     display: flex;
@@ -31,6 +32,7 @@
     border-radius: 50%;
     transition: 0.8s;
     font-family: 'Sen', sans-serif;
+
   }
   
   #spin::after {
@@ -44,9 +46,6 @@
   
   #filterBtn {
     font-family: 'Sen', sans-serif;
-    background-color: #ff9100;
-    width: 30vw;
+    background-color: #ff7622;
     font-size: 30px;
-    margin-bottom: 15%;
-
   }
