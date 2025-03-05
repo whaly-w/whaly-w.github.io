@@ -45,6 +45,7 @@ async function resetVariables() {
 
 // Function to handle the 'X" button click event
 async function handleDeleteBtn(folderName) {
+    folderName = folderName.replaceAll('\"', '')
     console.log(`delete ${folderName}`);
 
     let restaurantCard = document.querySelector("#restaurant-card-" + folderName);
@@ -69,7 +70,8 @@ async function handleDeleteBtn(folderName) {
 }
 
 // Function to handle the "+" button click event
-async function handleAddRestaurant(folderName, disable) {
+async function handleAddRestaurant(folderName) {
+    folderName = folderName.replaceAll('\"', '');
     console.log(folderName)
 
     let restaurantCard = document.querySelector("#restaurant-card-" + folderName);
@@ -107,8 +109,56 @@ async function handleAddRestaurant(folderName, disable) {
     const snapshot = await get(SelectedListRef)
     let MyGroupVariableSelectedList = snapshot.val();
     MyGroupVariableSelectedList.push(folderName) 
-
+    
     console.log(MyGroupVariableSelectedList)
+    await set(ref(database, `FATE_MEAL/Account/${urlParams['Username']}/MyGroupVariable/SelectedList`), MyGroupVariableSelectedList);
+}
+
+async function handleMultiAddRestaurant(folderList) {
+    // Add selected info to database
+    const SelectedListRef = ref(database, `FATE_MEAL/Account/${urlParams['Username']}/MyGroupVariable/SelectedList`);
+    const snapshot = await get(SelectedListRef)
+    let MyGroupVariableSelectedList = snapshot.val();
+
+    folderList.forEach(folderName => {
+        folderName = folderName.replaceAll('\"', '');
+        console.log(folderName)
+        
+        let restaurantCard = document.querySelector("#restaurant-card-" + folderName);
+        console.log(restaurantCard)
+        
+        
+        if (restaurantCard != null) {
+            restaurantCard.classList.add('restaurant-card-selected');
+            restaurantCard.classList.remove('restaurant-card');
+        }
+    
+    
+        let selectedList = document.querySelector(".selected-list");
+    
+        let deleteBtnList = selectedList.querySelectorAll('.delete-btn');
+        let exist = false;
+        console.log(deleteBtnList)
+        deleteBtnList.forEach(btn => {
+            if (btn.id == 'delete-btn-' + folderName) {
+                exist = true;
+            }
+        });
+        if (exist) {return};
+    
+    
+        let deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('btn', 'btn-outline-secondary', 'delete-btn');
+        deleteBtn.id = 'delete-btn-' + folderName
+        deleteBtn.addEventListener('click', () => {handleDeleteBtn(folderName)});
+        deleteBtn.innerHTML = `${folderName} ⛌`;
+        
+        selectedList.appendChild(deleteBtn);
+        MyGroupVariableSelectedList.push(folderName);
+        
+    })
+
+    console.log(MyGroupVariableSelectedList);
     await set(ref(database, `FATE_MEAL/Account/${urlParams['Username']}/MyGroupVariable/SelectedList`), MyGroupVariableSelectedList);
 }
 
@@ -222,9 +272,7 @@ async function autoAddData() {
         snapshot = await get(ref(database, `FATE_MEAL/GlobalGroup/${urlParams['target']}`))
     }
     
-    snapshot.val().forEach(shop => {
-        handleAddRestaurant(shop);
-    })
+    handleMultiAddRestaurant(snapshot.val());
 
     document.querySelector('#name-msg input').value = urlParams['target'];
     await set(ref(database, `FATE_MEAL/Account/${urlParams['Username']}/MyGroupVariable/Name`), urlParams['target']);
