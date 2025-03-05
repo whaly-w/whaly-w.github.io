@@ -1,0 +1,199 @@
+@import url('https://fonts.cdnfonts.com/css/sen');
+
+/* General Styles */
+body {
+    font-family: 'Sen', Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar */
+.search-bar {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar i {
+    margin-right: 10px;
+    color: #888;
+}
+
+.search-bar input {
+    font-family: 'Sen', sans-serif;
+    border: none;
+    background: none;
+    outline: none;
+    flex-grow: 1;
+}
+
+/* Selected Section */
+.selected-list {
+    margin-bottom: 2%;
+}
+
+.selected-card {
+    border-color: #888888;
+}
+
+.delete-btn {
+    font-family: 'Sen', sans-serif;
+    margin-inline: 2px;
+    color: #888888;
+}
+
+/* Recommendation Section */
+h2 {
+    font-family: 'Sen', sans-serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: 'Sen', sans-serif;
+    font: 18px;
+}
+
+/* Restaurant List */
+.restaurant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Restaurant Card - not selected*/
+.restaurant-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Restaurant Card - selected*/
+.restaurant-card-selected {
+    display: flex;
+    align-items: center;
+    background-color: #fce4cb;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: #f4a261;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Restaurant Card - hidden*/
+.restaurant-card-hidden {
+    display: none;
+}
+
+
+/* Image Placeholder */
+.restaurant-image {
+    width: 60px;
+    height: 60px;
+    background-color: #bbb;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Restaurant Info */
+.restaurant-info {
+    flex-grow: 1;
+}
+
+.restaurant-info h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.restaurant-info p {
+    font-size: 18px;
+    color: #888;
+    margin: 5px 0 0;
+}
+
+/* Add Button */
+.add-button {
+    background-color: #f4a261;
+    border: none;
+    color: white;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #e76f51;
+}
+
+.restaurant-add-btn:hover {
+    background-color: #fce4cb;
+}
+
+/* Create Button */
+.create-button {
+    margin-right: 10px;
+}
+
+/* Modal */
+.modal-content {
+    font-family: 'Sen', sans-serif;
+}
+
+.modal-title {
+    font-size: 30px;
+}
+
+.modal-body {
+    font-size: 20px;
+}
+
+.btn-close {
+    background-color: #fff3e0;
+    border-radius: 50%; 
+    width: 30px; 
+    height: 30px;
+    padding: 0;
+    line-height: 26px; 
+    color: #f57c00; 
+    font-size: 25px; 
+    opacity: 1; 
+    box-shadow: none; 
+  }
+  
+  .btn-close:hover {
+    background-color: #fff3e0; 
+    color: #f9a825; 
+  }
+
+  .create-btn {
+    background-color: #ff9100; /* Orange background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 25px; /* Adjust font size as needed */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+  }
+  
+  .create-btn:hover {
+    background-color: #ff6d00; /* Slightly darker orange on hover */
+  }

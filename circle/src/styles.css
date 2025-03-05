@@ -49,3 +49,21 @@
     background-color: #ff7622;
     font-size: 30px;
   }
+
+  #selectedImg {
+    border-radius: 5%;
+  }
+
+  .selected-restaurant-info {
+    font-size: 30px;
+
+  }
+
+  .selected-restaurant-info p {
+    font-size: 20px;
+    color: #bdbec1;
+  }
+
+  /* .shop-title {
+    font-weight: bold;
+  } */
