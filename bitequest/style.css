@@ -1,0 +1,337 @@
+body {
+  font-family: 'Righteous', sans-serif;
+  color: black;
+}
+
+.hero {
+  background-color: #FF914C;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16/9;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.navbar-bg {
+  background-color: white;  /* White background */
+  width: 100%;  /* Full width */
+  position: absolute; /* Ensures it spans across the page */
+  left: 0;
+  top: 0;
+  z-index: 1000; /* Keeps it above other elements */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.img-custom {
+  position: relative;
+  top: 170px;   /* Moves image up */
+  left: 40px;   /* Moves image slightly to the right */
+}
+
+.title {
+  color: #FF914C;
+  font-family: 'Righteous', sans-serif;
+  font-size: 3vw;
+  font-style: normal;
+}
+
+.nav_link:hover {
+  color: #00ccff;
+}
+
+.active {
+  color: red;
+}
+
+.text-wrapper {
+  flex-grow: 1;
+}
+
+.text-wrapper h1 {
+  /* font-size: 50px; */
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-family: 'Righteous', sans-serif;
+  font-style: normal;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  margin-right: 500px;
+}
+
+.text-wrapper p {
+  /* font-size: 20px; */
+  font-size: 2vw;
+  font-family: 'Righteous', sans-serif;
+  font-style: normal;
+  letter-spacing: 2px;
+  margin-right: 900px;
+}
+
+
+/* Welcome Back Section */
+.welcome-back {
+  background-color: hsl(0, 0%, 100%);
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.welcome-back .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.welcome-back h1 {
+  color: #FF914C;
+  font-family: 'Righteous', sans-serif;
+  font-size: 6vw;
+  font-style: normal;
+
+  position: relative;
+  top: 150px;   /* Moves image up */
+  left: 0px;   
+}
+
+.welcome-back p {
+  color: #FF914C;
+  font-family: 'Righteous', sans-serif;
+  font-size: 2vw;
+  font-style: normal;
+
+  position: relative;
+  top: 200px;   /* Moves image up */
+  left: 0px;   
+}
+
+/* Mission */
+.mission {
+  background-color:  #FF914C;
+  /* Replace with your stars background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10vw 0;
+  /* padding: 100px 0; */
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+
+.mission p {
+  color:  #ffffff;
+  font-family: 'Righteous', sans-serif;
+  font-size: 2vw;
+  font-style: normal;
+
+  line-height: 1.5;
+  margin-bottom: 20px;
+  position: relative;
+  top: -100px;   /* Moves image up */
+  left: -20px;   
+}
+
+.mission h2 {
+  color:  #ffffff;
+  font-family: 'Righteous', sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+
+  position: relative;
+  top: 30px;   /* Moves image up */
+  left: 350px;   
+  font-weight: bold;
+}
+
+.planet {
+  /* Common styles for both planets */
+  position: absolute;
+  /* Add width and height, or max-width and max-height if needed */
+}
+
+.jupiter {
+  background-image: url('assets/images/Jupiter-removebg-preview_0.png');
+  /* Path to Jupiter image */
+  background-size: contain;
+  /* Or cover, depending on how you want it to fit */
+  background-repeat: no-repeat;
+  left: 5%;
+  /* Adjust position as needed */
+  bottom: 20px;
+  /* Adjust position as needed */
+  width: 50%;
+  /* Example width */
+  height: 50%;
+  /* Example height */
+}
+
+.moon {
+  background-image: url('assets/images/S__11460624-removebg-preview_0.png');
+  /* Path to Moon image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: -25%;
+  /* Adjust position as needed */
+  top: 20px;
+  /* Adjust position as needed */
+  width: 60%;
+  /* Example width */
+  height: 60%;
+  /* Example height */
+}
+
+/* swiper */
+.swiper-background {
+  background:  #FF914C;
+  width: 100%;
+  aspect-ratio: 16/9;
+  /* height: 100vh; */
+  /* min-height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  background-color: #ffffff;
+}
+
+/* .swiper-content {
+  background: url("../assets/background/spacecraft.png") center/cover no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+} */
+
+.swiper-content .title {
+  color:  #FF914C;
+  font-family: 'Righteous', sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+
+  text-align: center;
+  /* font-size: 60px; */
+  /* font-weight: 400; */
+  margin-bottom: 20px;
+  /* margin-bottom: 5%; */
+  z-index: 1;
+}
+
+.swiper {
+  width: 75%; 
+  margin: 0 auto;
+  overflow: hidden; 
+  /* background-color: blue; */
+}
+
+.swiper-slide {
+  /* Remove any width you previously set on .swiper-slide */
+  /* Swiper will now manage the slide widths */
+  display: flex; /* Keep this for the vertical arrangement of image and text */
+  flex-direction: column;
+  align-items: center;
+  padding: 2% 0%;
+  /* opacity: 0; */
+}
+
+.swiper-slide img {
+  width: 80%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 30px;
+  border: 10px solid#FF914C;
+}
+
+
+.info {
+  display: none;
+}
+
+.swiper-info {
+  color: #FF914C;
+}
+
+
+.swiper-info .nick-name {
+  /* font-size: 60px; */
+  font-size: 3.2vw;
+  margin: 0%;
+}
+
+.swiper-info .name {
+  /* font-size: 30px;  */
+  font-size: 1.6vw;
+  margin: 0%;
+}
+
+.swiper-info .ID {
+  font-size: 1.6vw;
+  /* font-size: 1.6vw; */
+}
+
+
+/* === MEDIA QUERIES FOR SMALL SCREENS (MOBILE) === */
+@media (max-width: 768px) {
+  .swiper-content .title {
+    margin-bottom: 0px
+  }
+
+  .text-wrapper h1 {
+    font-size: 6vw;
+    margin-right: 5%;
+  }
+
+  .text-wrapper p {
+    font-size: 3vw;
+    margin-right: 10%;
+  }
+
+  .welcome-back h1 {
+    font-size: 8vw;
+  }
+
+  .mission p {
+    font-size: 3vw;
+  }
+
+  .mission h2 {
+    font-size: 5vw;
+  }
+
+  .swiper-content .title {
+    font-size: 6vw;
+  }
+
+  .swiper-info .nick-name {
+    font-size: 3vw;
+  }
+
+  .swiper-info .name {
+    font-size: 2vw;
+  }
+
+  .swiper-info .ID {
+    font-size: 2vw;
+  }
+}
