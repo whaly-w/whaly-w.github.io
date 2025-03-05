@@ -135,13 +135,23 @@ async function addGroupToUser() {
 
     const mealPackData = userGroup.exists() ? userGroup.val() : {};
 
+    let txt = ['', '', '#ff9100']
     if (!mealPackData[folderName]) {
         // Add the restaurant data to Meal-pack
         await set(ref(database, `FATE_MEAL/Account/${username}/Meal-pack/${folderName}`), ['0_Default']);
         console.log(`Added ${folderName} to Meal-pack`);
+        txt = ['Success', `Saved \'${folderName}\' to you favorite`, '#ff9100']
     } else {
-        console.log(`${folderName} already exists in Meal-pack`);
+        console.log(`${folderName} already exists in favorite`);
+        txt = ['Fail', `\'${folderName}\' already exists in favorite`, '#ff0000']
     }
+
+    const myModal = new bootstrap.Modal(document.getElementById('notifyModal'));
+    document.querySelector('#notifyTitle').innerHTML = txt[0];
+    document.querySelector('#notifyInfo').innerHTML = txt[1];
+    document.getElementById('notifyBtn').style.backgroundColor = txt[2]
+
+    myModal.show();
 }
 
 
