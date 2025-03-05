@@ -13,17 +13,6 @@ const db = getDatabase(app);
 
 console.log("Initializing Firebase...");
 
-///////////////////////////////////////////// Functions
-// Get parameter from window
-function getUrlParameters() {
-    const params = {};
-    const search = window.location.search.substring(1);
-    return search? search : 'whaly-w'
-}
-const username = getUrlParameters();
-console.log('login as ' + username)
-
-
 // Fetch restaurant data from Firebase for a specific category
 async function getRestaurants(category) {
     const mealPackRef = ref(db, `FATE_MEAL/Account/whaly-w/Meal-pack/${category}`);
