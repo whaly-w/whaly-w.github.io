@@ -145,11 +145,19 @@ async function handleGenModal(selectedShop) {
     console.log(formattedDate); // Output: 2025-03-06
 
     let recording = await get(ref(database, `FATE_MEAL/Account/${urlPrams['user']}/History/${formattedDate}`))
+    let recordList = []
     if (recording.val() == null) {
-        set(ref(database, `FATE_MEAL/Account/${urlPrams['user']}/History/${formattedDate}`), [selectedShop.label]);
-    } else {
-        let recordList = recording.val()
+        console.log('add new')
         recordList.push(selectedShop.label)
+        await set(ref(database, `FATE_MEAL/Account/${urlPrams['user']}/History/${formattedDate}`), recordList);
+    } else {
+        recordList = recording.val()
+        if (recordList.includes(selectedShop.label)) {
+            console.log('existed')
+            return
+        }
+        recordList.push(selectedShop.label)
+        console.log('save new shop')
     }
     await set(ref(database, `FATE_MEAL/Account/${urlPrams['user']}/History/${formattedDate}`), recordList) 
 }
