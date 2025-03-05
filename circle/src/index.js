@@ -41,6 +41,15 @@ async function fetchGroup() {
         snapshot.val().forEach((shop) => {
             shopList.push(shop.replaceAll('\"', ''))
         });
+
+        if (shopList[0] == '0_Default') {
+            const snapshot_global = await get(ref(database, `FATE_MEAL/GlobalGroup/${urlPrams['group']}`));
+            shopList = [];
+            snapshot_global.val().forEach((shop) => {
+                shopList.push(shop.replaceAll('\"', ''));
+            });
+        }
+
         filterShopList = [...shopList];
         console.log(shopList);
     } else {
