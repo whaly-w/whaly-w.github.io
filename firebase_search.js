@@ -40,7 +40,7 @@ async function fetchRestaurants() {
 
             // Ensure data exists before assigning
             const name = folderName || "Unknown"; // Use the folder name as the restaurant name
-            const photo = data.Photo || 'placeholder.jpg';
+            const photo = 'placeholder.jpg';
             const id = folderName
 
             restaurantCard.innerHTML = `

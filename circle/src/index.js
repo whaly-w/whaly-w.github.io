@@ -177,7 +177,7 @@ const PI = Math.PI
 const TAU = 2 * PI
 let arc = TAU / sectors.length
 
-const friction = 0.991 // 0.995=soft, 0.99=mid, 0.98=hard
+const friction = 0.98 // 0.995=soft, 0.99=mid, 0.98=hard, prev= 0.991
 let angVel = 0 // Angular velocity
 let ang = 0 // Angle in radians
 

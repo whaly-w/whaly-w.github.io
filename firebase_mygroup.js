@@ -183,7 +183,7 @@ async function fetchRestaurants() {
 
             // Ensure data exists before assigning
             const name = folderName || "Unknown"; // Use the folder name as the restaurant name
-            const photo = data.Photo || 'placeholder.jpg';
+            const photo = 'placeholder.jpg';
             const location = data.Location || "Unknown Location";
             const rating = data.Rate || "Unknown Location";
 
